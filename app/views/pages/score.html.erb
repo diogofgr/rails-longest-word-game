@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="container text-center" style="width: 100%;">
+        <h2><%= @result[:message]%></h2>
+        <h4>Your score: <%= @result[:score].round(1) %></h4>
+        <h4>Time to answer: <%= @result[:time].round(1)%> seconds</h4>
+        <h4>English: <%= @user_word %></h4>
+        <h4>French: <%= @result[:translation] %></h4>
+        <%= link_to "play again", game_path %>
+      </div>
+    </div>
+  </div>
+</div>

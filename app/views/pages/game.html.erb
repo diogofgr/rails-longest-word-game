@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <div class="container text-center " style="width: 100%;">
+        <h2>Make an English word with the following letters</h2>
+        <% @grid_size %>
+        <h3><%= @grid.join(' - ') %></h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="container text-center" style="width: 100%;">
+        <form action="/score">
+          <div class="form-group">
+            <input type="text" id="question" class="form-control" name="query" placeholder="your best guess...">
+            <input type="hidden" name="start_time" value="<%= Time.now %>">
+            <input type="hidden" name="grid" value="<%= @grid %>">
+          </div>
+          <input type="submit" value="Go!" class="btn btn-primary btn-lg">
+        </form>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="container text-center" style="width: 100%;">
+        <%= link_to "play again", game_path %>
+      </div>
+    </div>
+  </div>
+</div>
